@@ -11,4 +11,31 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+export EDITOR=vim
+export VISUALEDITOR=mvim
 
+# Aliases:
+alias ff="ranger"
+alias e="$EDITOR"
+alias ge="mvim --servername MVIM --remote-tab"
+alias g="git"
+alias ze="e ~/.zshrc"
+alias zr="source ~/.zshrc"
+alias l="ls -la"
+alias now="vim ~/.whatamidoingow"
+
+# Local before sys:
+export PATH=/usr/local/bin:/usr/sbin:$PATH
+
+# Go:
+export GOPATH=~/go
+
+# Docker
+alias docker="$HOME/go/bin/docker -H tcp://127.0.0.1:4243"
+export FORWARD_DOCKER_PORTS=1
+
+# Vagrant
+export VAGRANT_CWD="/Users/murphyra/Github/docker"
+
+# For GRC
+source "`brew --prefix`/etc/grc.bashrc"
