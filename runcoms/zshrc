@@ -12,12 +12,12 @@ fi
 
 # Customize to your needs...
 export EDITOR=vim
-export VISUALEDITOR=mvim
+# export VISUALEDITOR=mvim
 
 # Aliases:
 alias ff="ranger"
 alias e="$EDITOR"
-alias ge="mvim --servername MVIM --remote-tab"
+# alias ge="mvim --servername MVIM --remote-tab"
 alias g="git"
 alias ze="e ~/.zshrc"
 alias zr="source ~/.zshrc"
@@ -38,4 +38,4 @@ export FORWARD_DOCKER_PORTS=1
 export VAGRANT_CWD="/Users/murphyra/Github/docker"
 
 # For GRC
-source "`brew --prefix`/etc/grc.bashrc"
+# source "`brew --prefix`/etc/grc.bashrc"
