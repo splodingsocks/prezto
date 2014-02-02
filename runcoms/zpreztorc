@@ -89,6 +89,13 @@ zstyle ':prezto:module:history-substring-search' globbing-flags ''
 zstyle ':prezto:module:prompt' theme 'pure'
 
 #
+# Ruby
+#
+
+# Auto switch the Ruby version on directory change.
+# zstyle ':prezto:module:ruby:chruby' auto-switch 'yes'
+
+#
 # Screen
 #
 
