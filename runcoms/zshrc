@@ -29,45 +29,24 @@ function rrc() {
   source ~/.zshrc
 }
 
-function kata() {
-  sm_go_env
-  cd $HOME/projects/katamari/$@
-}
-
-function mkbin() {
-  touch $HOME/bin/$1
-  chmod a+x $HOME/bin/$1
-  ed $HOME/bin/$1
-}
-
-function gulplist() {
-  cat gulpfile.* | grep .task
-}
-
-export KATAMARI="/Users/murphy/SM/katamari"
 export PROJECTS=$HOME/projects
 
-export PATH="/Users/murphy/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-export PATH="/usr/local/go/bin:$PATH"
+export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export VAGRANT_CWD=$HOME/vagrant/kuali
 
-# export DOCKER_HOST=tcp://192.168.59.103:2376
-# export DOCKER_CERT_PATH=/Users/murphy/.boot2docker/certs/boot2docker-vm
-# export DOCKER_TLS_VERIFY=1
-# 
-export VAGRANT_CWD=$HOME/VMs/smnet
-# 
-export NVM_DIR="/Users/murphy/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-export KARMA_DIR=~/.nvm/`cat ~/.nvm/alias/default`/lib/node_modules/karma/bin
-export PATH=$KARMA_DIR:$PATH
-export GOPATH=$HOME/projects/katamari/go
-export PATH=$PATH:/usr/local/go/bin
-# eval "$(rbenv init -)"
-alias rm=trash
 
-# Add GHC 7.8.3 to the PATH, via http://ghcformacosx.github.io/
-export GHC_DOT_APP="/Applications/ghc-7.8.3.app"
-if [ -d "$GHC_DOT_APP" ]; then
-    export PATH="${HOME}/.cabal/bin:${GHC_DOT_APP}/Contents/bin:${PATH}"
+
+## The following section only runs on Mac computers:
+if [[ "$OSTYPE" == "darwin"* ]]; then
+
+  alias rm=trash
+
+  # Add GHC 7.8.3 to the PATH, via http://ghcformacosx.github.io/
+  export GHC_DOT_APP="/Applications/ghc-7.8.3.app"
+  if [ -d "$GHC_DOT_APP" ]; then
+      export PATH="${HOME}/.cabal/bin:${GHC_DOT_APP}/Contents/bin:${PATH}"
+  fi
+
 fi
-
